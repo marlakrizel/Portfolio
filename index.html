@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>M Musni | Virtual Assistant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
   body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #0b1220;
-    color: #e5e7eb;
-  }
-
-  .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
   }
 
   /* HERO */
   .hero {
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #1f2937, #0b1220);
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #000000, #1a001a);
+    animation: fadeDown 1s ease;
   }
 
   .hero h1 {
-    font-size: 48px;
+    font-size: 50px;
     margin: 0;
+    color: #ff4da6;
   }
 
   .hero p {
     font-size: 18px;
-    color: #a5b4fc;
-    margin-top: 10px;
+    color: #ffb3d9;
   }
 
   .btn {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 22px;
-    background: #6366f1;
+    background: #ff4da6;
     color: white;
-    border-radius: 8px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #ff1f8f;
+    transform: scale(1.05);
+  }
+
+  /* SECTIONS */
+  section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  h2 {
+    color: #ff4da6;
+    border-left: 5px solid #ff4da6;
+    padding-left: 10px;
   }
 
   /* CARDS */
@@ -58,34 +73,53 @@
   }
 
   .card {
-    background: #111827;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #1f2937;
+    background: #1a1a1a;
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid #ff4da6;
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s forwards;
   }
 
-  h2 {
-    margin-top: 40px;
-    color: #93c5fd;
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #ff4da6;
   }
 
-  ul {
-    padding-left: 20px;
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  .highlight {
-    background: #111827;
-    padding: 20px;
-    border-left: 4px solid #6366f1;
-    border-radius: 10px;
+  @keyframes fadeDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
+
+  /* DELAYS */
+  .card:nth-child(1) { animation-delay: 0.2s; }
+  .card:nth-child(2) { animation-delay: 0.4s; }
+  .card:nth-child(3) { animation-delay: 0.6s; }
+  .card:nth-child(4) { animation-delay: 0.8s; }
 
   footer {
     text-align: center;
     padding: 30px;
-    color: #6b7280;
+    color: #888;
     font-size: 13px;
   }
+
 </style>
 </head>
 
@@ -93,41 +127,61 @@
 
 <div class="hero">
   <h1>M Musni</h1>
-  <p>Virtual Assistant | Customer Support | Chat Operations Specialist</p>
+  <p>Virtual Assistant | Customer Support | Chat Operations</p>
   <a class="btn" href="mailto:yourname@gmail.com">Hire Me</a>
 </div>
 
-<div class="container">
-
+<section>
   <h2>About Me</h2>
-  <div class="highlight">
-    I am a detail-oriented Virtual Assistant with experience in chat support, social media management,
-    and order tracking. I help businesses handle customer messages, organize workflows, and maintain
-    smooth daily operations.
-  </div>
+  <p>
+    I am a Virtual Assistant experienced in chat support, customer service, and online operations.
+    I help businesses manage messages, organize data, and handle daily tasks efficiently.
+  </p>
+</section>
 
+<section>
   <h2>Experience</h2>
-  <div class="card">
-    <ul>
-      <li>Handled chat-based customer support inquiries</li>
-      <li>Managed 20–50 daily messages/comments via Meta Business Suite</li>
-      <li>Tracked orders using Excel and Google Sheets</li>
-      <li>Assisted in daily business operations and customer communication</li>
-    </ul>
-  </div>
+  <div class="card">Handled chat support for customer inquiries</div>
+  <div class="card">Managed 20–50 daily comments using Meta Business Suite</div>
+  <div class="card">Tracked orders using Excel and Google Sheets</div>
+  <div class="card">Assisted daily business operations remotely</div>
+</section>
 
+<section>
   <h2>Skills</h2>
   <div class="grid">
     <div class="card">Customer Support</div>
     <div class="card">Chat Handling</div>
     <div class="card">Data Entry</div>
     <div class="card">Order Tracking</div>
-    <div class="card">Time Management</div>
     <div class="card">Communication</div>
     <div class="card">Multitasking</div>
+    <div class="card">Time Management</div>
     <div class="card">Problem Solving</div>
   </div>
+</section>
 
+<section>
+  <h2>Sample Work</h2>
+  <div class="grid">
+    <div class="card">
+      Order Tracking System<br>
+      Organized customer orders using spreadsheets with accuracy and updates.
+    </div>
+
+    <div class="card">
+      Chat Support Handling<br>
+      Responded to customer inquiries quickly and professionally.
+    </div>
+
+    <div class="card">
+      Social Media Engagement<br>
+      Managed daily messages and comments via Meta Business Suite.
+    </div>
+  </div>
+</section>
+
+<section>
   <h2>Tools</h2>
   <div class="grid">
     <div class="card">Google Workspace</div>
@@ -137,20 +191,15 @@
     <div class="card">Zoom</div>
     <div class="card">Canva</div>
   </div>
+</section>
 
-  <h2>Availability</h2>
-  <div class="card">
-    Open for part-time or full-time Virtual Assistant / Customer Support roles.
-    Fast learner and adaptable to new tools and systems.
-  </div>
-
+<section>
   <h2>Contact</h2>
   <div class="card">
-    Email: yourname@gmail.com <br/>
-    Location: Philippines
+    Email: yourname@gmail.com <br>
+    Available for VA / Customer Support roles
   </div>
-
-</div>
+</section>
 
 <footer>
   © 2026 M Musni | Virtual Assistant Portfolio
