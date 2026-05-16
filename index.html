@@ -9,20 +9,21 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #333;
+      background: #f5f7fb;
+      color: #2c3e50;
+      line-height: 1.6;
     }
 
     header {
-      background: #2c3e50;
+      background: #1f2a38;
       color: white;
-      padding: 60px 20px;
       text-align: center;
+      padding: 70px 20px;
     }
 
     header h1 {
+      font-size: 42px;
       margin: 0;
-      font-size: 40px;
     }
 
     header p {
@@ -31,20 +32,20 @@
       opacity: 0.9;
     }
 
-    .btn {
-      display: inline-block;
+    .cta {
       margin-top: 20px;
-      padding: 12px 20px;
+      display: inline-block;
       background: #1abc9c;
       color: white;
-      text-decoration: none;
+      padding: 12px 22px;
       border-radius: 6px;
+      text-decoration: none;
       font-weight: bold;
     }
 
     section {
       max-width: 900px;
-      margin: 30px auto;
+      margin: 25px auto;
       background: white;
       padding: 25px;
       border-radius: 10px;
@@ -52,8 +53,9 @@
     }
 
     h2 {
-      color: #2c3e50;
-      margin-bottom: 10px;
+      border-left: 4px solid #1abc9c;
+      padding-left: 10px;
+      margin-bottom: 15px;
     }
 
     ul {
@@ -62,20 +64,29 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
     }
 
     .card {
-      background: #f9f9f9;
-      padding: 15px;
+      background: #f0f4f8;
+      padding: 12px;
       border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .highlight {
+      background: #eafaf1;
+      padding: 15px;
+      border-left: 4px solid #1abc9c;
+      border-radius: 6px;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 14px;
+      font-size: 13px;
       color: #777;
     }
   </style>
@@ -85,27 +96,28 @@
 
 <header>
   <h1>M Musni</h1>
-  <p>Virtual Assistant | Customer Service | Chat Support Specialist</p>
-  <a class="btn" href="mailto:yourname@gmail.com">Hire Me</a>
+  <p>Virtual Assistant | Customer Support | Chat Operations Specialist</p>
+  <a class="cta" href="mailto:yourname@gmail.com">Hire Me</a>
 </header>
 
 <section>
-  <h2>About Me</h2>
-  <p>
-    I am a detail-oriented Virtual Assistant with experience in chat support, social media engagement,
-    and daily operations management. I am highly organized, a fast learner, and skilled in handling
-    customer communication efficiently.
-  </p>
+  <h2>Professional Summary</h2>
+  <div class="highlight">
+    Customer-focused Virtual Assistant with experience in chat support, social media engagement,
+    and daily operations. Skilled in handling customer inquiries, managing Meta Business Suite interactions,
+    tracking orders using spreadsheets, and maintaining organized workflows.
+    Fast learner with strong communication and multitasking abilities.
+  </div>
 </section>
 
 <section>
-  <h2>Experience</h2>
+  <h2>Core Experience</h2>
   <ul>
-    <li>Handled chat-based customer support and inquiries</li>
-    <li>Managed 20–50 daily comments/messages via Meta Business Suite</li>
-    <li>Supported day-to-day operations and customer engagement</li>
-    <li>Tracked orders using Excel and Google Sheets</li>
-    <li>Maintained organized records and accurate data entries</li>
+    <li>Handled chat-based customer service inquiries professionally and efficiently</li>
+    <li>Managed 20–50 daily comments/messages using Meta Business Suite</li>
+    <li>Assisted with daily operational tasks and customer engagement</li>
+    <li>Tracked and updated order records using Excel and Google Sheets</li>
+    <li>Ensured accurate data entry and organized workflow management</li>
   </ul>
 </section>
 
@@ -116,15 +128,15 @@
     <div class="card">Chat Handling</div>
     <div class="card">Data Entry</div>
     <div class="card">Order Tracking</div>
-    <div class="card">Social Media Management</div>
-    <div class="card">Communication Skills</div>
     <div class="card">Time Management</div>
+    <div class="card">Communication</div>
     <div class="card">Multitasking</div>
+    <div class="card">Problem Solving</div>
   </div>
 </section>
 
 <section>
-  <h2>Tech Stack</h2>
+  <h2>Tools I Use</h2>
   <ul>
     <li>Google Workspace (Docs, Sheets, Drive, Gmail)</li>
     <li>Microsoft Office (Word, Excel)</li>
@@ -136,9 +148,15 @@
 </section>
 
 <section>
+  <h2>Availability</h2>
+  <p>I am available for part-time or full-time Virtual Assistant and Customer Support roles.  
+  I am open to training and quickly adapting to new systems and workflows.</p>
+</section>
+
+<section>
   <h2>Contact</h2>
   <p>Email: yourname@gmail.com</p>
-  <p>Available for freelance VA and customer support roles.</p>
+  <p>Location: Philippines</p>
 </section>
 
 <footer>
