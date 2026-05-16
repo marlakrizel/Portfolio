@@ -5,67 +5,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marla Krizel Musni | Virtual Assistant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
 <style>
   body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background: #0d0d0d;
     color: #fff;
-    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* NAVBAR (folder style) */
+  .nav {
+    position: sticky;
+    top: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ff4da6;
+    z-index: 1000;
+  }
+
+  .nav a {
+    color: #ffb3d9;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-weight: 600;
+  }
+
+  .nav a:hover {
+    background: #ff4da6;
+    color: white;
   }
 
   /* HERO */
   .hero {
     text-align: center;
     padding: 90px 20px;
-    background: linear-gradient(135deg, #000000, #1a001a);
-    animation: fadeDown 1s ease;
+    background: linear-gradient(135deg, #000, #1a001a);
   }
 
   .hero h1 {
-    font-size: 50px;
+    font-size: 55px;
     margin: 0;
     color: #ff4da6;
+    font-family: 'Dancing Script', cursive;
   }
 
   .hero p {
-    font-size: 18px;
     color: #ffb3d9;
+    font-size: 18px;
   }
 
   .btn {
-    display: inline-block;
     margin-top: 20px;
-    padding: 12px 22px;
+    display: inline-block;
     background: #ff4da6;
-    color: white;
+    padding: 12px 22px;
     border-radius: 30px;
+    color: white;
     text-decoration: none;
-    font-weight: 600;
     transition: 0.3s;
   }
 
   .btn:hover {
-    background: #ff1f8f;
     transform: scale(1.05);
   }
 
-  /* SECTIONS */
   section {
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 60px auto;
     padding: 20px;
   }
 
   h2 {
     color: #ff4da6;
-    border-left: 5px solid #ff4da6;
+    border-left: 4px solid #ff4da6;
     padding-left: 10px;
   }
 
-  /* CARDS */
+  /* GRID */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -74,50 +98,39 @@
 
   .card {
     background: #1a1a1a;
-    padding: 18px;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 12px;
     border: 1px solid #ff4da6;
-    transition: 0.4s;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s forwards;
+    cursor: pointer;
+    transition: 0.3s;
   }
 
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px #ff4da6;
   }
 
-  /* ANIMATIONS */
+  /* CLICK TO EXPAND SAMPLE WORK */
+  .details {
+    display: none;
+    margin-top: 10px;
+    color: #ffb3d9;
+    font-size: 14px;
+  }
+
+  /* ANIMATION */
+  .fade {
+    animation: fadeUp 0.8s ease forwards;
+  }
+
   @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-
-  @keyframes fadeDown {
-    from {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* DELAYS */
-  .card:nth-child(1) { animation-delay: 0.2s; }
-  .card:nth-child(2) { animation-delay: 0.4s; }
-  .card:nth-child(3) { animation-delay: 0.6s; }
-  .card:nth-child(4) { animation-delay: 0.8s; }
 
   footer {
     text-align: center;
     padding: 30px;
-    color: #888;
-    font-size: 13px;
+    color: #777;
   }
 
 </style>
@@ -125,13 +138,25 @@
 
 <body>
 
-<div class="hero">
-  <h1>M Musni</h1>
-  <p>Virtual Assistant | Customer Support | Chat Operations</p>
-  <a class="btn" href="mailto:yourname@gmail.com">Hire Me</a>
+<!-- NAVBAR -->
+<div class="nav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#tools">Tools</a>
+  <a href="#work">Sample Work</a>
+  <a href="#contact">Contact</a>
 </div>
 
-<section>
+<!-- HERO -->
+<div class="hero" id="home">
+  <h1>Marla Musni</h1>
+  <p>Virtual Assistant | Customer Support | Chat Operations</p>
+  <a class="btn" href="mailto:marlakrizel.work@gmail.com">Hire Me</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
   <h2>About Me</h2>
   <p>
     I am a Virtual Assistant experienced in chat support, customer service, and online operations.
@@ -139,50 +164,20 @@
   </p>
 </section>
 
-<section>
+<!-- EXPERIENCE -->
+<section id="experience" class="fade">
   <h2>Experience</h2>
-  <div class="card">Handled chat support for customer inquiries</div>
-  <div class="card">Managed 20–50 daily comments using Meta Business Suite</div>
-  <div class="card">Tracked orders using Excel and Google Sheets</div>
-  <div class="card">Assisted daily business operations remotely</div>
-</section>
-
-<section>
-  <h2>Skills</h2>
   <div class="grid">
-    <div class="card">Customer Support</div>
-    <div class="card">Chat Handling</div>
-    <div class="card">Data Entry</div>
-    <div class="card">Order Tracking</div>
-    <div class="card">Communication</div>
-    <div class="card">Multitasking</div>
-    <div class="card">Time Management</div>
-    <div class="card">Problem Solving</div>
+    <div class="card">Handled chat-based customer support</div>
+    <div class="card">Managed 20–50 daily comments via Meta Business Suite</div>
+    <div class="card">Tracked orders using Excel & Google Sheets</div>
+    <div class="card">Supported daily business operations</div>
   </div>
 </section>
 
-<section>
-  <h2>Sample Work</h2>
-  <div class="grid">
-    <div class="card">
-      Order Tracking System<br>
-      Organized customer orders using spreadsheets with accuracy and updates.
-    </div>
-
-    <div class="card">
-      Chat Support Handling<br>
-      Responded to customer inquiries quickly and professionally.
-    </div>
-
-    <div class="card">
-      Social Media Engagement<br>
-      Managed daily messages and comments via Meta Business Suite.
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Tools</h2>
+<!-- TOOLS -->
+<section id="tools" class="fade">
+  <h2>Tools I Use</h2>
   <div class="grid">
     <div class="card">Google Workspace</div>
     <div class="card">Microsoft Excel</div>
@@ -193,17 +188,56 @@
   </div>
 </section>
 
-<section>
+<!-- SAMPLE WORK (CLICKABLE) -->
+<section id="work" class="fade">
+  <h2>Sample Work (Click to View)</h2>
+
+  <div class="grid">
+
+    <div class="card" onclick="toggle(this)">
+      Order Tracking System
+      <div class="details">
+        Created organized spreadsheets to track customer orders, status updates, and delivery progress.
+      </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+      Chat Support Handling
+      <div class="details">
+        Responded to customer inquiries professionally with fast response time and accuracy.
+      </div>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+      Social Media Engagement
+      <div class="details">
+        Managed 20–50 daily comments/messages using Meta Business Suite.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade">
   <h2>Contact</h2>
   <div class="card">
-    Email: yourname@gmail.com <br>
-    Available for VA / Customer Support roles
+    Email: <b>marlakrizel.work@gmail.com</b><br>
+    Available for Virtual Assistant & Customer Support roles
   </div>
 </section>
 
 <footer>
-  © 2026 M Musni | Virtual Assistant Portfolio
+  © 2026 Marla Musni | Virtual Assistant Portfolio
 </footer>
+
+<!-- JS FOR CLICK TO EXPAND -->
+<script>
+function toggle(el) {
+  let detail = el.querySelector(".details");
+  detail.style.display = (detail.style.display === "block") ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
