@@ -3,144 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marla Krizel Musni | Virtual Assistant</title>
+<title>Marla Musni | Virtual Assistant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
-  body {
-    margin: 0;
-    font-family: 'Quicksand', sans-serif;
-    background: #0d0d0d;
-    color: #fff;
-    scroll-behavior: smooth;
-  }
 
-  /* NAVBAR (folder style) */
-  .nav {
-    position: sticky;
-    top: 0;
-    background: #111;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 15px;
-    border-bottom: 1px solid #ff4da6;
-    z-index: 1000;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  .nav a {
-    color: #ffb3d9;
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 20px;
-    transition: 0.3s;
-    font-weight: 600;
-  }
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: #0d0d0d;
+  color: white;
+  overflow-x: hidden;
+}
 
-  .nav a:hover {
-    background: #ff4da6;
-    color: white;
-  }
+/* NAVBAR */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #ff4da6;
+}
 
-  /* HERO */
-  .hero {
-    text-align: center;
-    padding: 90px 20px;
-    background: linear-gradient(135deg, #000, #1a001a);
-  }
+.nav a {
+  text-decoration: none;
+  color: #ffb3d9;
+  padding: 10px 16px;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-weight: 600;
+}
 
-  .hero h1 {
-    font-size: 55px;
-    margin: 0;
-    color: #ff4da6;
-    font-family: 'Dancing Script', cursive;
-  }
+.nav a:hover {
+  background: #ff4da6;
+  color: white;
+  transform: translateY(-2px);
+}
 
-  .hero p {
-    color: #ffb3d9;
-    font-size: 18px;
-  }
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg,#000,#1a001a);
+  animation: fadeDown 1s ease;
+}
 
-  .btn {
-    margin-top: 20px;
-    display: inline-block;
-    background: #ff4da6;
-    padding: 12px 22px;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-  }
+.hero h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 60px;
+  color: #ff4da6;
+  margin: 0;
+  animation: float 3s ease-in-out infinite;
+}
 
-  .btn:hover {
-    transform: scale(1.05);
-  }
+.hero p {
+  color: #ffb3d9;
+  font-size: 18px;
+}
 
-  section {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 20px;
-  }
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: #ff4da6;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: bold;
+}
 
-  h2 {
-    color: #ff4da6;
-    border-left: 4px solid #ff4da6;
-    padding-left: 10px;
-  }
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #ff4da6;
+}
 
-  /* GRID */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-  }
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  animation: fadeUp 1s ease;
+}
 
-  .card {
-    background: #1a1a1a;
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid #ff4da6;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+h2 {
+  color: #ff4da6;
+  margin-bottom: 20px;
+  border-left: 5px solid #ff4da6;
+  padding-left: 10px;
+}
 
-  .card:hover {
-    transform: translateY(-5px);
-  }
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 15px;
+}
 
-  /* CLICK TO EXPAND SAMPLE WORK */
-  .details {
-    display: none;
-    margin-top: 10px;
-    color: #ffb3d9;
-    font-size: 14px;
-  }
+/* CARDS */
+.card {
+  background: #1a1a1a;
+  border: 1px solid #ff4da6;
+  border-radius: 15px;
+  padding: 20px;
+  transition: 0.4s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
 
-  /* ANIMATION */
-  .fade {
-    animation: fadeUp 0.8s ease forwards;
-  }
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 20px rgba(255,77,166,0.5);
+}
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+/* TOOL ICONS */
+.tool-icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+  color: #ff4da6;
+}
 
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: #777;
+/* SAMPLE WORK DETAILS */
+.details {
+  display: none;
+  margin-top: 12px;
+  color: #ffb3d9;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* FADE */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  font-size: 13px;
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVIGATION -->
 <div class="nav">
-  <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#experience">Experience</a>
   <a href="#tools">Tools</a>
@@ -149,93 +199,174 @@
 </div>
 
 <!-- HERO -->
-<div class="hero" id="home">
+<div class="hero">
   <h1>Marla Musni</h1>
-  <p>Virtual Assistant | Customer Support | Chat Operations</p>
-  <a class="btn" href="mailto:marlakrizel.work@gmail.com">Hire Me</a>
+  <p>Virtual Assistant • Customer Support • Chat Operations</p>
+
+  <a class="btn"
+  href="mailto:marlakrizel.work@gmail.com">
+  Hire Me
+  </a>
 </div>
 
 <!-- ABOUT -->
-<section id="about" class="fade">
-  <h2>About Me</h2>
-  <p>
-    I am a Virtual Assistant experienced in chat support, customer service, and online operations.
-    I help businesses manage messages, organize data, and handle daily tasks efficiently.
-  </p>
+<section id="about">
+<h2>About Me</h2>
+
+<div class="card">
+I am a Virtual Assistant experienced in customer support,
+chat handling, social media management, and order tracking.
+I help businesses stay organized, responsive, and efficient.
+</div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="fade">
-  <h2>Experience</h2>
-  <div class="grid">
-    <div class="card">Handled chat-based customer support</div>
-    <div class="card">Managed 20–50 daily comments via Meta Business Suite</div>
-    <div class="card">Tracked orders using Excel & Google Sheets</div>
-    <div class="card">Supported daily business operations</div>
-  </div>
+<section id="experience">
+<h2>Experience</h2>
+
+<div class="grid">
+
+<div class="card">
+Handled customer support inquiries through chat platforms.
+</div>
+
+<div class="card">
+Managed 20–50 daily comments/messages using Meta Business Suite.
+</div>
+
+<div class="card">
+Tracked customer orders using Excel and Google Sheets.
+</div>
+
+<div class="card">
+Assisted with daily online business operations remotely.
+</div>
+
+</div>
 </section>
 
 <!-- TOOLS -->
-<section id="tools" class="fade">
-  <h2>Tools I Use</h2>
-  <div class="grid">
-    <div class="card">Google Workspace</div>
-    <div class="card">Microsoft Excel</div>
-    <div class="card">Meta Business Suite</div>
-    <div class="card">Notion</div>
-    <div class="card">Zoom</div>
-    <div class="card">Canva</div>
-  </div>
+<section id="tools">
+<h2>Tools I Use</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="tool-icon">
+<i class="fa-brands fa-google"></i>
+</div>
+Google Workspace
+</div>
+
+<div class="card">
+<div class="tool-icon">
+<i class="fa-brands fa-microsoft"></i>
+</div>
+Microsoft Office Suite
+</div>
+
+<div class="card">
+<div class="tool-icon">
+<i class="fa-brands fa-meta"></i>
+</div>
+Meta Business Suite
+</div>
+
+<div class="card">
+<div class="tool-icon">
+<i class="fa-solid fa-note-sticky"></i>
+</div>
+Notion
+</div>
+
+<div class="card">
+<div class="tool-icon">
+<i class="fa-solid fa-video"></i>
+</div>
+Zoom & Chat Platforms
+</div>
+
+<div class="card">
+<div class="tool-icon">
+<i class="fa-solid fa-cloud"></i>
+</div>
+Cloud Storage & File Management
+</div>
+
+<div class="card">
+<div class="tool-icon">
+<i class="fa-solid fa-magnifying-glass"></i>
+</div>
+Online Research Tools
+</div>
+
+<div class="card">
+<div class="tool-icon">
+<i class="fa-solid fa-palette"></i>
+</div>
+Canva
+</div>
+
+</div>
 </section>
 
-<!-- SAMPLE WORK (CLICKABLE) -->
-<section id="work" class="fade">
-  <h2>Sample Work (Click to View)</h2>
+<!-- SAMPLE WORK -->
+<section id="work">
+<h2>Sample Work (Click Cards)</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <div class="card" onclick="toggle(this)">
-      Order Tracking System
-      <div class="details">
-        Created organized spreadsheets to track customer orders, status updates, and delivery progress.
-      </div>
-    </div>
+<div class="card" onclick="toggle(this)">
+Order Tracking System
 
-    <div class="card" onclick="toggle(this)">
-      Chat Support Handling
-      <div class="details">
-        Responded to customer inquiries professionally with fast response time and accuracy.
-      </div>
-    </div>
+<div class="details">
+Created organized spreadsheets to monitor customer orders,
+statuses, and updates with accurate tracking.
+</div>
+</div>
 
-    <div class="card" onclick="toggle(this)">
-      Social Media Engagement
-      <div class="details">
-        Managed 20–50 daily comments/messages using Meta Business Suite.
-      </div>
-    </div>
+<div class="card" onclick="toggle(this)">
+Chat Support Handling
 
-  </div>
+<div class="details">
+Responded to customer concerns professionally with quick response times and clear communication.
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+Social Media Management
+
+<div class="details">
+Managed daily engagement and customer interactions using Meta Business Suite.
+</div>
+</div>
+
+</div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="fade">
-  <h2>Contact</h2>
-  <div class="card">
-    Email: <b>marlakrizel.work@gmail.com</b><br>
-    Available for Virtual Assistant & Customer Support roles
-  </div>
+<section id="contact">
+<h2>Contact</h2>
+
+<div class="card">
+📧 marlakrizel.work@gmail.com <br><br>
+Available for Virtual Assistant & Customer Support opportunities.
+</div>
 </section>
 
 <footer>
-  © 2026 Marla Musni | Virtual Assistant Portfolio
+© 2026 Marla Musni | Virtual Assistant Portfolio
 </footer>
 
-<!-- JS FOR CLICK TO EXPAND -->
 <script>
 function toggle(el) {
   let detail = el.querySelector(".details");
-  detail.style.display = (detail.style.display === "block") ? "none" : "block";
+
+  if(detail.style.display === "block") {
+    detail.style.display = "none";
+  } else {
+    detail.style.display = "block";
+  }
 }
 </script>
 
