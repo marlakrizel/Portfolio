@@ -6,147 +6,213 @@
 
 <title>Marla Krizel Charloe Musni | Virtual Assistant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
+<!-- ICONS -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0b0b0b;
-  color: #ffffff;
-  scroll-behavior: smooth;
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Quicksand',sans-serif;
+  background:#0b0b0b;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* FLOATING BACKGROUND SHAPES */
+.shape{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(90px);
+  opacity:0.2;
+  z-index:-1;
+  animation:float 6s ease-in-out infinite;
+}
+
+.shape1{
+  width:300px;
+  height:300px;
+  background:#ff4da6;
+  top:10%;
+  left:5%;
+}
+
+.shape2{
+  width:250px;
+  height:250px;
+  background:#ff66c4;
+  bottom:10%;
+  right:10%;
+}
+
+.shape3{
+  width:180px;
+  height:180px;
+  background:#ff99d6;
+  top:60%;
+  left:60%;
 }
 
 /* NAV */
-.nav {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  padding: 15px;
-  background: rgba(0,0,0,0.85);
-  border-bottom: 1px solid #ff4da6;
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  padding:15px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,77,166,0.3);
+  z-index:1000;
 }
 
-.nav a {
-  text-decoration: none;
-  color: #ffb3d9;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 20px;
-  transition: 0.3s;
+.nav a{
+  text-decoration:none;
+  color:#ffb3d9;
+  padding:10px 16px;
+  border-radius:25px;
+  transition:0.3s;
+  font-weight:600;
 }
 
-.nav a:hover {
-  background: #ff4da6;
-  color: white;
+.nav a:hover{
+  background:#ff4da6;
+  color:white;
+  transform:translateY(-3px);
+}
+
+/* FULL PAGE SECTIONS */
+section{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:80px 10%;
+}
+
+/* CONTENT BOX */
+.box{
+  max-width:1000px;
+  width:100%;
+  animation:fadeUp 1s ease;
 }
 
 /* HERO */
-.hero {
-  text-align: center;
-  padding: 90px 20px;
-  background: linear-gradient(135deg, #000, #1a001a);
+.hero h1{
+  font-size:70px;
+  font-family:'Playfair Display',serif;
+  color:#ff4da6;
+  animation:bounce 2.5s infinite;
 }
 
-.hero h1 {
-  font-size: 50px;
-  color: #ff4da6;
-  margin: 0;
-}
-
-.hero p {
-  color: #ffb3d9;
-  font-size: 18px;
-  margin-top: 10px;
+.hero p{
+  font-size:18px;
+  color:#ffd1ea;
+  margin-top:15px;
+  line-height:1.8;
 }
 
 /* BUTTONS */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  background: #ff4da6;
-  color: white;
-  transition: 0.3s;
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 24px;
+  border-radius:30px;
+  background:#ff4da6;
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+  font-weight:600;
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #ff4da6;
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px #ff4da6;
 }
 
-.secondary {
-  background: transparent;
-  border: 1px solid #ff4da6;
-}
-
-/* SECTIONS */
-section {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
-}
-
-h2 {
-  color: #ff4da6;
-  border-left: 4px solid #ff4da6;
-  padding-left: 10px;
+.secondary{
+  background:transparent;
+  border:1px solid #ff4da6;
 }
 
 /* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+  margin-top:20px;
 }
 
-/* CARD */
-.card {
-  background: #151515;
-  padding: 20px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,77,166,0.4);
-  transition: 0.3s;
+/* CARDS */
+.card{
+  background:#151515;
+  border:1px solid rgba(255,77,166,0.4);
+  padding:20px;
+  border-radius:18px;
+  transition:0.4s;
+  cursor:pointer;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255,77,166,0.3);
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 25px rgba(255,77,166,0.4);
 }
 
-/* TAGS */
-.tag {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: rgba(255,77,166,0.15);
-  color: #ffb3d9;
+/* SAMPLE DETAILS */
+.details{
+  display:none;
+  margin-top:10px;
+  color:#ffb3d9;
+  font-size:14px;
+}
+
+/* TITLES */
+h2{
+  font-size:40px;
+  color:#ff4da6;
+  margin-bottom:20px;
+  border-left:4px solid #ff4da6;
+  padding-left:10px;
+}
+
+/* FLOAT */
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+}
+
+/* FADE */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* BOUNCE */
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
 }
 
 /* CONTACT */
-.contact {
-  text-align: center;
-  padding: 40px;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #777;
-  font-size: 13px;
+.contact{
+  text-align:center;
+  line-height:2;
 }
 
 </style>
@@ -154,182 +220,188 @@ footer {
 
 <body>
 
+<!-- BACKGROUND SHAPES -->
+<div class="shape shape1"></div>
+<div class="shape shape2"></div>
+<div class="shape shape3"></div>
+
 <!-- NAV -->
 <div class="nav">
+  <a href="#home">Home</a>
   <a href="#about">About</a>
-  <a href="#why">Why Hire Me</a>
   <a href="#experience">Experience</a>
   <a href="#tools">Tools</a>
-  <a href="#work">Sample Work</a>
+  <a href="#work">Work</a>
   <a href="#contact">Contact</a>
 </div>
 
-<!-- HERO -->
-<div class="hero">
+<!-- HOME -->
+<section id="home">
+<div class="box hero">
 
-  <h1>Marla Krizel Charloe Musni</h1>
+<h1>Marla Krizel Charloe Musni</h1>
 
-  <p>
-  Virtual Assistant • Data Entry • Email Management • Research Support
-  </p>
+<p>
+Virtual Assistant • Data Entry • Email Management • Research Support<br><br>
 
-  <a class="btn" href="mailto:marlakrizel.work@gmail.com">
-  <i class="fa-solid fa-envelope"></i> Hire Me
-  </a>
+Welcome to my portfolio. I specialize in helping businesses stay organized,
+efficient, and supported through structured virtual assistance services.
+</p>
 
-  <a class="btn secondary" href="#">
-  <i class="fa-solid fa-briefcase"></i> OLJ Profile
-  </a>
+<a class="btn"
+href="mailto:marlakrizel.work@gmail.com">
+Hire Me
+</a>
 
-  <br>
+<a class="btn secondary"
+href="YOUR_OLJ_LINK_HERE">
+OLJ Profile
+</a>
 
-  <a class="btn secondary" href="resume.pdf" download>
-  <i class="fa-solid fa-file"></i> Download Resume
-  </a>
+<a class="btn secondary"
+href="resume.pdf" download>
+Download Resume
+</a>
 
 </div>
+</section>
 
 <!-- ABOUT -->
 <section id="about">
+<div class="box">
 
 <h2>About Me</h2>
 
 <div class="card">
 
-I am a 20-year-old Psychology student specializing in research-based work and data organization.
-I have experience working for 7 months in a local food business where I handled administrative tasks,
-data entry, email communication, and operational support.
+I am a 20-year-old Psychology student specialized in research-based work and data organization.
+I have 7 months of experience working with a local food business where I handled administrative
+tasks such as data entry, email management, and operational support.
 
 <br><br>
 
-I am highly skilled in Microsoft Excel, including formulas and data organization systems.
-I am also experienced in calendar management across different time zones, email handling,
-and maintaining structured workflows.
+I am skilled in Microsoft Excel (including formulas), Google Workspace, calendar management
+across time zones, and structured workflow systems. I adapt quickly to new tools and work well
+in fast-paced environments.
 
 <br><br>
 
-I work well in fast-paced environments, adapt quickly to new systems, and continuously upskill
-to improve efficiency. My goal is to help businesses improve productivity, organization, and
-customer communication through reliable virtual support.
+My goal is to help businesses improve productivity through efficient systems, organization,
+and reliable virtual support.
 
 </div>
 
-</section>
-
-<!-- WHY HIRE ME -->
-<section id="why">
-
-<h2>Why Hire Me</h2>
-
-<div class="grid">
-
-<div class="card">Fast Learner & Adaptable</div>
-<div class="card">Strong Excel & Data Skills</div>
-<div class="card">Reliable & Detail-Oriented</div>
-<div class="card">Works Well in Fast-Paced Environments</div>
-
 </div>
-
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
+<div class="box">
 
 <h2>Experience</h2>
 
 <div class="grid">
 
-<div class="card">
-7 months experience in a local food business handling admin support, data entry, and coordination.
+<div class="card" onclick="toggle(this)">
+Local Food Business (7 Months)
+<div class="details">
+Handled admin tasks, email management, data entry, and daily operational support.
+</div>
 </div>
 
-<div class="card">
-Managed email communication and daily operational tasks.
+<div class="card" onclick="toggle(this)">
+Excel & Data Systems
+<div class="details">
+Used Excel formulas and structured sheets for tracking and organizing business data.
+</div>
 </div>
 
-<div class="card">
-Organized data and reports using Excel formulas and structured sheets.
+<div class="card" onclick="toggle(this)">
+Calendar Management
+<div class="details">
+Managed scheduling across different time zones and coordinated daily tasks.
+</div>
 </div>
 
-<div class="card">
-Assisted in scheduling and calendar management across different time zones.
 </div>
 
 </div>
-
 </section>
 
 <!-- TOOLS -->
 <section id="tools">
+<div class="box">
 
-<h2>Tools & Skills</h2>
+<h2>Tools I Use</h2>
 
 <div class="grid">
 
 <div class="card">Google Workspace</div>
-<div class="card">Microsoft Excel (Formulas)</div>
-<div class="card">Microsoft Office Suite</div>
+<div class="card">Microsoft Excel & Office</div>
 <div class="card">Notion</div>
-<div class="card">Email Management</div>
-<div class="card">Calendar Scheduling</div>
+<div class="card">Zoom</div>
+<div class="card">Email & Chat Support Tools</div>
+<div class="card">Social Media Management</div>
 <div class="card">Data Entry Systems</div>
-<div class="card">Online Research</div>
+<div class="card">File Management & Cloud Storage</div>
+<div class="card">Online Research Tools</div>
 <div class="card">Canva</div>
 
 </div>
 
+</div>
 </section>
 
-<!-- SAMPLE WORK -->
+<!-- WORK -->
 <section id="work">
+<div class="box">
 
 <h2>Sample Work</h2>
 
 <div class="grid">
 
-<div class="card">
+<div class="card" onclick="toggle(this)">
 Email Management System
-<div class="tag">Administrative Support</div>
+<div class="details">Organized and handled business email communication efficiently.</div>
 </div>
 
-<div class="card">
-Excel Data Tracking with Formulas
-<div class="tag">Data Entry</div>
+<div class="card" onclick="toggle(this)">
+Excel Tracking System
+<div class="details">Created structured spreadsheets with formulas for data tracking.</div>
 </div>
 
-<div class="card">
-Calendar Scheduling Across Time Zones
-<div class="tag">Virtual Assistance</div>
+<div class="card" onclick="toggle(this)">
+Calendar Scheduling
+<div class="details">Managed appointments across multiple time zones.</div>
 </div>
 
 </div>
 
+</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
+<div class="box contact">
 
-<div class="contact">
+<h2>Contact Me</h2>
 
-<h2>Let’s Work Together</h2>
+Thank you for visiting my portfolio ♡<br><br>
 
-<p>
-Thank you for visiting my portfolio. I am open to Virtual Assistant opportunities
-and ready to help businesses improve their systems and productivity.
-</p>
+📧 marlakrizel.work@gmail.com<br>
+📱 +63 927 942 8874<br><br>
 
-<p>
-📧 marlakrizel.work@gmail.com <br>
-📱 +63 927 942 8874
-</p>
+I am available for Virtual Assistant opportunities.
 
 </div>
-
 </section>
 
-<footer>
-© 2026 Marla Krizel Charloe Musni | Virtual Assistant Portfolio
-</footer>
+<script>
+function toggle(el){
+  let d = el.querySelector(".details");
+  d.style.display = (d.style.display === "block") ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
