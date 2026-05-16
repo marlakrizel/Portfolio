@@ -1,313 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Marla Krizel Charloe Musni | Virtual Assistant</title>
 
-<!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- ICONS -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
 
-/* RESET */
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0b0b0b;
+  color: #ffffff;
+  scroll-behavior: smooth;
 }
 
-html{
-  scroll-behavior:smooth;
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 15px;
+  background: rgba(0,0,0,0.85);
+  border-bottom: 1px solid #ff4da6;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
-body{
-  font-family:'Poppins',sans-serif;
-  background:#0b0b0b;
-  color:white;
-  overflow-x:hidden;
+.nav a {
+  text-decoration: none;
+  color: #ffb3d9;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
-/* BACKGROUND SHAPES */
-
-.shape1,
-.shape2,
-.shape3{
-  position:fixed;
-  border-radius:50%;
-  filter:blur(80px);
-  z-index:-1;
-}
-
-.shape1{
-  width:300px;
-  height:300px;
-  background:#ff4da6;
-  top:-80px;
-  left:-80px;
-  opacity:0.25;
-}
-
-.shape2{
-  width:250px;
-  height:250px;
-  background:#ff66c4;
-  bottom:-50px;
-  right:-50px;
-  opacity:0.2;
-}
-
-.shape3{
-  width:180px;
-  height:180px;
-  background:#ff99d6;
-  top:40%;
-  left:70%;
-  opacity:0.12;
-}
-
-/* NAVIGATION */
-
-.nav{
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index:999;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  padding:18px;
-  background:rgba(0,0,0,0.65);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,77,166,0.3);
-}
-
-.nav a{
-  text-decoration:none;
-  color:#ffb3d9;
-  padding:10px 18px;
-  border-radius:30px;
-  transition:0.3s;
-  font-size:14px;
-  font-weight:600;
-}
-
-.nav a:hover{
-  background:#ff4da6;
-  color:white;
-  transform:translateY(-3px) scale(1.05);
-  box-shadow:0 0 15px rgba(255,77,166,0.5);
-}
-
-/* SECTIONS */
-
-section{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:120px 10%;
-}
-
-/* CONTAINER */
-
-.container{
-  width:100%;
-  max-width:1100px;
+.nav a:hover {
+  background: #ff4da6;
+  color: white;
 }
 
 /* HERO */
-
-.hero{
-  text-align:center;
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #000, #1a001a);
 }
 
-.hero h1{
-  font-family:'Pacifico',cursive;
-  font-size:75px;
-  color:#ff4da6;
-  animation:float 3s ease-in-out infinite;
+.hero h1 {
+  font-size: 50px;
+  color: #ff4da6;
+  margin: 0;
 }
 
-.hero p{
-  margin-top:20px;
-  font-size:20px;
-  color:#ffd6eb;
-  line-height:1.8;
+.hero p {
+  color: #ffb3d9;
+  font-size: 18px;
+  margin-top: 10px;
 }
 
 /* BUTTONS */
-
-.hero-buttons{
-  margin-top:35px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  background: #ff4da6;
+  color: white;
+  transition: 0.3s;
 }
 
-.btn{
-  padding:14px 28px;
-  border-radius:40px;
-  text-decoration:none;
-  color:white;
-  background:#ff4da6;
-  transition:0.35s;
-  font-weight:600;
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff4da6;
 }
 
-.btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 25px rgba(255,77,166,0.7);
+.secondary {
+  background: transparent;
+  border: 1px solid #ff4da6;
 }
 
-.secondary{
-  background:transparent;
-  border:1px solid #ff4da6;
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
 }
 
-.secondary:hover{
-  background:#ff4da6;
+h2 {
+  color: #ff4da6;
+  border-left: 4px solid #ff4da6;
+  padding-left: 10px;
 }
 
-/* CONTACT PILLS */
-
-.contact-pills{
-  margin-top:35px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
 }
 
-.pill{
-  padding:12px 20px;
-  border-radius:40px;
-  background:rgba(255,77,166,0.08);
-  border:1px solid rgba(255,77,166,0.3);
-  color:#ffb3d9;
-  transition:0.3s;
+/* CARD */
+.card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,77,166,0.4);
+  transition: 0.3s;
 }
 
-.pill:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 15px rgba(255,77,166,0.5);
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255,77,166,0.3);
 }
 
-/* TITLES */
-
-.title{
-  font-size:42px;
-  color:#ff4da6;
-  margin-bottom:25px;
+/* TAGS */
+.tag {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255,77,166,0.15);
+  color: #ffb3d9;
 }
 
-/* CARDS */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 40px;
 }
 
-.card{
-  background:#151515;
-  border:1px solid rgba(255,77,166,0.4);
-  border-radius:22px;
-  padding:28px;
-  transition:0.4s;
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-}
-
-.card::before{
-  content:"♡";
-  position:absolute;
-  top:10px;
-  right:15px;
-  color:#ff4da6;
-  opacity:0.25;
-  font-size:28px;
-}
-
-.card:hover{
-  transform:translateY(-10px) rotate(1deg);
-  box-shadow:0 0 25px rgba(255,77,166,0.45);
-}
-
-/* TOOL ICONS */
-
-.tool-icon{
-  font-size:38px;
-  margin-bottom:15px;
-  color:#ff4da6;
-}
-
-/* ABOUT */
-
-.about-text{
-  line-height:2;
-  font-size:17px;
-  color:#ffe3f1;
-}
-
-/* SAMPLE DETAILS */
-
-.details{
-  display:none;
-  margin-top:15px;
-  color:#ffb3d9;
-  line-height:1.8;
-  font-size:14px;
-}
-
-/* THANK YOU */
-
-.thankyou{
-  text-align:center;
-}
-
-.thankyou h2{
-  font-size:60px;
-  color:#ff4da6;
-  margin-bottom:20px;
-}
-
-.thankyou p{
-  line-height:2;
-  font-size:18px;
-  color:#ffe3f1;
-}
-
-/* ANIMATIONS */
-
-.fade{
-  animation:fadeUp 1s ease;
-}
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes float{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-10px);}
-  100%{transform:translateY(0);}
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  font-size: 13px;
 }
 
 </style>
@@ -315,132 +154,105 @@ section{
 
 <body>
 
-<!-- SHAPES -->
-
-<div class="shape1"></div>
-<div class="shape2"></div>
-<div class="shape3"></div>
-
 <!-- NAV -->
-
 <div class="nav">
-  <a href="#home">Home</a>
-  <a href="#about">About Me</a>
+  <a href="#about">About</a>
+  <a href="#why">Why Hire Me</a>
   <a href="#experience">Experience</a>
   <a href="#tools">Tools</a>
   <a href="#work">Sample Work</a>
   <a href="#contact">Contact</a>
 </div>
 
-<!-- HOME -->
+<!-- HERO -->
+<div class="hero">
 
-<section id="home">
+  <h1>Marla Krizel Charloe Musni</h1>
 
-<div class="container hero fade">
+  <p>
+  Virtual Assistant • Data Entry • Email Management • Research Support
+  </p>
 
-<h1>Marla Krizel Charloe Musni</h1>
+  <a class="btn" href="mailto:marlakrizel.work@gmail.com">
+  <i class="fa-solid fa-envelope"></i> Hire Me
+  </a>
 
-<p>
-Welcome to my portfolio! ♡ <br><br>
+  <a class="btn secondary" href="#">
+  <i class="fa-solid fa-briefcase"></i> OLJ Profile
+  </a>
 
-I am a detail-oriented Virtual Assistant and Customer Support Specialist
-with experience in chat handling, social media engagement, order tracking,
-and daily online operations support. I enjoy helping businesses stay organized,
-responsive, and efficient while providing excellent customer experiences.
-</p>
+  <br>
 
-<div class="hero-buttons">
-
-<a class="btn"
-href="mailto:marlakrizel.work@gmail.com">
-<i class="fa-solid fa-envelope"></i>
-Hire Me
-</a>
-
-<a class="btn secondary"
-href="#">
-<i class="fa-solid fa-briefcase"></i>
-OLJ Profile
-</a>
+  <a class="btn secondary" href="resume.pdf" download>
+  <i class="fa-solid fa-file"></i> Download Resume
+  </a>
 
 </div>
 
-<div class="contact-pills">
+<!-- ABOUT -->
+<section id="about">
 
-<div class="pill">
-<i class="fa-solid fa-phone"></i>
-+63 927 942 8874
-</div>
+<h2>About Me</h2>
 
-<div class="pill">
-<i class="fa-solid fa-envelope"></i>
-marlakrizel.work@gmail.com
-</div>
+<div class="card">
 
-</div>
+I am a 20-year-old Psychology student specializing in research-based work and data organization.
+I have experience working for 7 months in a local food business where I handled administrative tasks,
+data entry, email communication, and operational support.
+
+<br><br>
+
+I am highly skilled in Microsoft Excel, including formulas and data organization systems.
+I am also experienced in calendar management across different time zones, email handling,
+and maintaining structured workflows.
+
+<br><br>
+
+I work well in fast-paced environments, adapt quickly to new systems, and continuously upskill
+to improve efficiency. My goal is to help businesses improve productivity, organization, and
+customer communication through reliable virtual support.
 
 </div>
 
 </section>
 
-<!-- ABOUT -->
+<!-- WHY HIRE ME -->
+<section id="why">
 
-<section id="about">
+<h2>Why Hire Me</h2>
 
-<div class="container fade">
+<div class="grid">
 
-<h2 class="title">About Me</h2>
-
-<div class="card about-text">
-
-I am a customer-focused and highly organized Virtual Assistant with experience in
-chat support, social media engagement, customer communication, and online operations.
-
-My experience includes handling customer inquiries professionally through chat,
-managing daily comments and messages using Meta Business Suite, tracking customer
-orders using spreadsheets, and assisting businesses with smooth day-to-day operations.
-
-I am comfortable using productivity and communication tools such as Google Workspace,
-Microsoft Office Suite, Notion, Zoom, Canva, cloud storage platforms, and online
-research tools. I am also experienced in data entry, administrative support,
-and maintaining organized workflows.
-
-I am a fast learner who adapts quickly to new systems and tools. I value professionalism,
-clear communication, efficiency, and creating positive customer experiences while helping
-businesses stay productive and organized remotely.
-
-</div>
+<div class="card">Fast Learner & Adaptable</div>
+<div class="card">Strong Excel & Data Skills</div>
+<div class="card">Reliable & Detail-Oriented</div>
+<div class="card">Works Well in Fast-Paced Environments</div>
 
 </div>
 
 </section>
 
 <!-- EXPERIENCE -->
-
 <section id="experience">
 
-<div class="container fade">
-
-<h2 class="title">Experience</h2>
+<h2>Experience</h2>
 
 <div class="grid">
 
 <div class="card">
-Handled customer support inquiries through chat support platforms professionally and efficiently.
+7 months experience in a local food business handling admin support, data entry, and coordination.
 </div>
 
 <div class="card">
-Managed 20–50 daily customer comments and messages using Meta Business Suite.
+Managed email communication and daily operational tasks.
 </div>
 
 <div class="card">
-Tracked and updated customer orders using Excel and Google Sheets systems.
+Organized data and reports using Excel formulas and structured sheets.
 </div>
 
 <div class="card">
-Provided support for online business operations and administrative tasks remotely.
-</div>
-
+Assisted in scheduling and calendar management across different time zones.
 </div>
 
 </div>
@@ -448,144 +260,46 @@ Provided support for online business operations and administrative tasks remotel
 </section>
 
 <!-- TOOLS -->
-
 <section id="tools">
 
-<div class="container fade">
-
-<h2 class="title">Tools I Use</h2>
+<h2>Tools & Skills</h2>
 
 <div class="grid">
 
-<div class="card">
-<div class="tool-icon">
-<i class="fa-brands fa-google"></i>
-</div>
-Google Workspace
-</div>
-
-<div class="card">
-<div class="tool-icon">
-<i class="fa-brands fa-microsoft"></i>
-</div>
-Microsoft Office Suite
-</div>
-
-<div class="card">
-<div class="tool-icon">
-<i class="fa-brands fa-meta"></i>
-</div>
-Meta Business Suite
-</div>
-
-<div class="card">
-<div class="tool-icon">
-<i class="fa-solid fa-note-sticky"></i>
-</div>
-Notion
-</div>
-
-<div class="card">
-<div class="tool-icon">
-<i class="fa-solid fa-video"></i>
-</div>
-Zoom & Chat Platforms
-</div>
-
-<div class="card">
-<div class="tool-icon">
-<i class="fa-solid fa-hashtag"></i>
-</div>
-Social Media Management Tools
-</div>
-
-<div class="card">
-<div class="tool-icon">
-<i class="fa-solid fa-table"></i>
-</div>
-Data Entry & Order Tracking
-</div>
-
-<div class="card">
-<div class="tool-icon">
-<i class="fa-solid fa-cloud"></i>
-</div>
-Cloud Storage & File Management
-</div>
-
-<div class="card">
-<div class="tool-icon">
-<i class="fa-solid fa-magnifying-glass"></i>
-</div>
-Online Research & Admin Tools
-</div>
-
-<div class="card">
-<div class="tool-icon">
-<i class="fa-solid fa-palette"></i>
-</div>
-Canva
-</div>
-
-</div>
+<div class="card">Google Workspace</div>
+<div class="card">Microsoft Excel (Formulas)</div>
+<div class="card">Microsoft Office Suite</div>
+<div class="card">Notion</div>
+<div class="card">Email Management</div>
+<div class="card">Calendar Scheduling</div>
+<div class="card">Data Entry Systems</div>
+<div class="card">Online Research</div>
+<div class="card">Canva</div>
 
 </div>
 
 </section>
 
 <!-- SAMPLE WORK -->
-
 <section id="work">
 
-<div class="container fade">
-
-<h2 class="title">Sample Work</h2>
+<h2>Sample Work</h2>
 
 <div class="grid">
 
-<div class="card" onclick="toggle(this)">
-
-Order Tracking System
-
-<div class="details">
-Created organized spreadsheets to track customer orders,
-delivery statuses, and updates accurately using Google Sheets and Excel.
+<div class="card">
+Email Management System
+<div class="tag">Administrative Support</div>
 </div>
 
+<div class="card">
+Excel Data Tracking with Formulas
+<div class="tag">Data Entry</div>
 </div>
 
-<div class="card" onclick="toggle(this)">
-
-Chat Support Handling
-
-<div class="details">
-Handled customer inquiries professionally through chat platforms with
-clear communication and timely responses.
-</div>
-
-</div>
-
-<div class="card" onclick="toggle(this)">
-
-Social Media Engagement
-
-<div class="details">
-Managed customer interactions and daily comments/messages using Meta Business Suite.
-</div>
-
-</div>
-
-<div class="card" onclick="toggle(this)">
-
-Administrative Support
-
-<div class="details">
-Assisted with online research, organization, file management,
-and maintaining efficient workflows remotely.
-</div>
-
-</div>
-
+<div class="card">
+Calendar Scheduling Across Time Zones
+<div class="tag">Virtual Assistance</div>
 </div>
 
 </div>
@@ -593,55 +307,29 @@ and maintaining efficient workflows remotely.
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact">
 
-<div class="container thankyou fade">
+<div class="contact">
 
-<h2>Thank You ♡</h2>
+<h2>Let’s Work Together</h2>
 
 <p>
+Thank you for visiting my portfolio. I am open to Virtual Assistant opportunities
+and ready to help businesses improve their systems and productivity.
+</p>
 
-Thank you for visiting my portfolio! <br><br>
-
-I am currently open to opportunities related to Virtual Assistance,
-Customer Support, Chat Operations, Administrative Support,
-and Social Media Management.
-
-If you are looking for someone who is organized,
-detail-oriented, adaptable, and eager to help your business grow,
-I would love to connect with you.
-
-<br><br>
-
-📧 marlakrizel.work@gmail.com
-<br><br>
-
+<p>
+📧 marlakrizel.work@gmail.com <br>
 📱 +63 927 942 8874
-
 </p>
 
 </div>
 
 </section>
 
-<script>
-
-function toggle(el){
-
-let detail = el.querySelector(".details");
-
-if(detail.style.display === "block"){
-detail.style.display = "none";
-}
-
-else{
-detail.style.display = "block";
-}
-
-}
-
-</script>
+<footer>
+© 2026 Marla Krizel Charloe Musni | Virtual Assistant Portfolio
+</footer>
 
 </body>
 </html>
